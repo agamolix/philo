@@ -16,8 +16,11 @@ int	init_data(t_data *data, int argc, char **argv)
 {
 	data->start = calc_time();
 	data->nb = my_atoi(argv[1]);
-	data->time_to_eat = my_atoi(argv[3]);
-	data->time_to_sleep = my_atoi(argv[4]);
+	data->time_to_eat = my_atoi(argv[3]) + 1;
+	data->time_to_sleep = my_atoi(argv[4]) + 1;
+	if (data->nb % 2)
+		data->time_to_sleep += 5;
+
 	data->time_to_die = my_atoi(argv[2]);
 	if (argc == 6)
 	{
